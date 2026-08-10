@@ -54,6 +54,8 @@ jobs:
         run: npm ci
 
       - name: Run tests and generate coverage report
+        env:
+          CHROME_BIN: /usr/bin/google-chrome-stable
         run: npx ng test --no-watch --no-progress --browsers=ChromeHeadlessCI --code-coverage
 
       - name: Upload coverage report
